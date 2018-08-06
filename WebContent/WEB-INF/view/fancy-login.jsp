@@ -7,7 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
-
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath }/resources/css/style.css" />
 </head>
 <body>
 	<div class="auth">
