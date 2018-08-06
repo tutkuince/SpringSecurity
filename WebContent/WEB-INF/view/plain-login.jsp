@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h3>Login Page</h3>
 	<form:form
 		action="${pageContext.request.contextPath }/authenticateTheUser"
 		method="POST">
