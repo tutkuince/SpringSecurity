@@ -1,75 +1,55 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "bourbon";
 
 body {
-	font-family: 'Roboto', sans-serif;
+	background: #eee !important;
+	width: 50%;
+	height: auto;
+	margin: 0 auto;
 }
 
-.auth { &__header { padding:13vh1remcalc(11vh + 35px);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #f0f0f0;
-	background-image: linear-gradient(#3280e4, #584dc3); //
-	background-image: url(https://picsum.photos/1500/1200/?random);
-	background-size: cover;
-	background-position: center center;
-	position: relative;
-	box-shadow: 0 3px 5px rgba(#000, 0.3); &: before { content : "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0; //
-	background-image: linear-gradient(rgba(#000, 0), rgba(#000, 0.7));
+.wrapper {
+	margin-top: 80px;
+	margin-bottom: 80px;
 }
 
+.form-signin {
+	max-width: 380px;
+	padding: 15px 35px 45px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
-&
-__logo {
+
+.
+form-signin-heading, .checkbox {
+	margin-bottom: 30px;
+}
+
+.checkbox {
+	font-weight: normal;
+}
+
+.form-control {
 	position: relative;
-	z-index: 18;
-	background: #fff;
+	font-size: 16px;
+	height: auto;
 	padding: 10px;
-	border-radius: 50%;
-	box-shadow: 0 2px 7px rgba(#000, 0.15);
-	overflow: hidden;
+	@include box-sizing(border-box);
+	
+	&:focus	{
+		z-index:2;
 }
 
-&
-__body {
-	padding-bottom: 2rem;
+}
+input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
-&
-__form {
-	min-width: 280px;
-	max-width: 340px;
-	margin: auto;
-	margin-top: -40px;
-	padding: 0 10px;
-	position: relative;
-	z-index: 9; & _body { padding : 0.7rem 1.5rem 35px;
-	border-radius: 0.5rem;
-	background: #fff;
-	border: 1px solid #eee;
-	box-shadow: 0 4px 10px rgba(#000, 0.15);
-}
-
-&
-_title {
-	font-size: 1.3rem;
-	text-align: center;
-	text-transform: uppercase;
-	margin-bottom: 1.2rem;
-}
-
-&
-_actions {
-	text-align: center;
-	padding: 0 2rem;
-	margin-top: -25px; . btn { border-radius : 30px;
-	box-shadow: 0 2px 12px rgba(#3280e4, 0.5);
-}
-}
+input[type="password"] {
+	margin-bottom: 20px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 }
