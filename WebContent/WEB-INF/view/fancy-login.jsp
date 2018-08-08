@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -72,7 +73,6 @@ input[type="password"] {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
-}
 </style>
 
 </head>
@@ -115,7 +115,7 @@ input[type="password"] {
 				placeholder="Username" />
 			<input type="password" class="form-control" name="password"
 				placeholder="Password" />
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" v>
 
 		</form:form>
 	</div>
