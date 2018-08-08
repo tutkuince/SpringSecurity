@@ -1,5 +1,7 @@
 package io.spring.security.config;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,6 +22,9 @@ public class SpringConfiguration implements WebMvcConfigurer {
 	// set up variable to hold the properties
 	@Autowired
 	private Environment env;
+	
+	// set up a logger for diagnostics
+	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	@Bean
 	public ViewResolver viewResolver() {
