@@ -32,11 +32,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()	// restrict access based on the HttpServletRequest
-			.anyRequest().authenticated()	// Any request to the app must be authenticated (ie logged in)
+				.anyRequest().authenticated()	// Any request to the app must be authenticated (ie logged in)
 			.and()
 			.formLogin()	// We are customizing the form login process
-			.loginPage("/showLoginPage")	// show our custom form at the request mapping "/showLoginPage"
-			.loginProcessingUrl("/authenticateTheUser")	// Login form should post data to this url for processing (check user id and password) (spring create)
-			.permitAll();	// Allow everyone to see login page. No need to be logged in.
+				.loginPage("/showLoginPage")	// show our custom form at the request mapping "/showLoginPage"
+				.loginProcessingUrl("/authenticateTheUser")	// Login form should post data to this url for processing (check user id and password) (spring create)
+				.permitAll()	// Allow everyone to see login page. No need to be logged in.
+			.and()
+			.logout().permitAll();	// Adds logout support
 	}
 }
