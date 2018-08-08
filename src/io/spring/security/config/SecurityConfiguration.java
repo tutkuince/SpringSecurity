@@ -42,6 +42,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/authenticateTheUser")	// Login form should post data to this url for processing (check user id and password) (spring create)
 				.permitAll()	// Allow everyone to see login page. No need to be logged in.
 			.and()
-			.logout().permitAll();	// Adds logout support
+			.logout().permitAll()	// Adds logout support
+			.and()
+			.exceptionHandling().accessDeniedPage("/access-denied");
 	}
 }
