@@ -79,6 +79,11 @@ input[type="password"] {
 </head>
 <body>
 	<div class="wrapper">
+	
+		<!-- 
+			With <form> tag: Token was not sent
+			Spring MVC <form:form> does this automagically but we did not use <form:form>
+		 -->
 		<form:form
 			action="${pageContext.request.contextPath }/authenticateTheUser"
 			method="POST" class="form-signin">
