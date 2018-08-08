@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -79,13 +78,13 @@ input[type="password"] {
 </head>
 <body>
 	<div class="wrapper">
-	
+
 		<!-- 
 			With <form> tag: Token was not sent
-			Spring MVC <form:form> does this automagically but we did not use <form:form>
+			Spring MVC form:form does this automagically but we did not use form:form
 		 -->
-		 
-		 <!-- 
+
+		<!-- 
 		 	Manually adding tokens;
 		 	
 		 	<input type="hidden"
@@ -93,14 +92,14 @@ input[type="password"] {
 		 		   value="${_csrf.token}" />
 		 
 		  -->
-		 
+
 		<form:form
 			action="${pageContext.request.contextPath }/authenticateTheUser"
 			method="POST" class="form-signin">
 
 			<h2 class="form-signin-heading">Sign In</h2>
 			<!-- Check for login error -->
-			
+
 			<c:if test="${param.error != null }">
 				<div class="alert alert-danger col-xs-offset-1 col-xs-10">
 					Invalid username and password</div>
@@ -108,11 +107,10 @@ input[type="password"] {
 
 			<!-- Check for logout -->
 			<c:if test="${param.logout != null }">
-				<div class="alert alert-danger col-xs-offset-1 col-xs-10">
-					You have been logged out.
-				</div>
+				<div class="alert alert-danger col-xs-offset-1 col-xs-10">You
+					have been logged out.</div>
 			</c:if>
-			
+
 			<input type="text" class="form-control" name="username"
 				placeholder="Username" />
 			<input type="password" class="form-control" name="password"
