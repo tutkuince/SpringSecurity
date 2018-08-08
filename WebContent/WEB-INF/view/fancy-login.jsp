@@ -115,7 +115,7 @@ input[type="password"] {
 				placeholder="Username" />
 			<input type="password" class="form-control" name="password"
 				placeholder="Password" />
-			<input class="btn btn-lg btn-primary btn-block" type="submit" v>
+			<input class="btn btn-lg btn-primary btn-block" type="submit" />
 
 		</form:form>
 	</div>
