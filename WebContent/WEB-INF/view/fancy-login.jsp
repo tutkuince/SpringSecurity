@@ -84,6 +84,16 @@ input[type="password"] {
 			With <form> tag: Token was not sent
 			Spring MVC <form:form> does this automagically but we did not use <form:form>
 		 -->
+		 
+		 <!-- 
+		 	Manually adding tokens;
+		 	
+		 	<input type="hidden"
+		 		   name="${_csrf.parameterName}"
+		 		   value="${_csrf.token}" />
+		 
+		  -->
+		 
 		<form:form
 			action="${pageContext.request.contextPath }/authenticateTheUser"
 			method="POST" class="form-signin">
