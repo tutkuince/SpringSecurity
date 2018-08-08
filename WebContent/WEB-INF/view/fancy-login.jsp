@@ -16,8 +16,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
-	@import "bourbon";
-
 body {
 	background: #eee !important;
 	width: 50%;
@@ -52,10 +50,15 @@ form-signin-heading, .checkbox {
 	font-size: 16px;
 	height: auto;
 	padding: 10px;
-	@include box-sizing(border-box);
-	
-	&:focus	{
-		z-index:2;
+	@
+	include
+	box-sizing(border-box);
+	&:
+	focus
+	{
+	z-index
+	:
+	2;
 }
 
 }
@@ -80,18 +83,27 @@ input[type="password"] {
 			action="${pageContext.request.contextPath }/authenticateTheUser"
 			method="POST" class="form-signin">
 
-			<h2 class="form-signin-heading">Please login</h2>
+			<h2 class="form-signin-heading">Sign In</h2>
+			<!-- Check for login error -->
+			
+			<c:if test="${param.error != null }">
+				<div class="alert alert-danger col-xs-offset-1 col-xs-10">
+					Invalid username and password</div>
+			</c:if>
+
+			<!-- Check for logout -->
+			<c:if test="${param.logout != null }">
+				<div class="alert alert-danger col-xs-offset-1 col-xs-10">
+					You have been logged out.
+				</div>
+			</c:if>
+			
 			<input type="text" class="form-control" name="username"
 				placeholder="Username" />
 			<input type="password" class="form-control" name="password"
 				placeholder="Password" />
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 
-			<!-- Check for login error -->
-			<c:if test="${param.error != null }">
-				<p style="color: red;">Sorry! You entered invalid username or
-					password.</p>
-			</c:if>
 		</form:form>
 	</div>
 </body>
