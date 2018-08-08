@@ -59,8 +59,8 @@ public class SpringConfiguration implements WebMvcConfigurer {
 
 		// set database connection props
 		dataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		dataSource.setUser(env.getProperty("jdbc.url"));
-		dataSource.setPassword(env.getProperty("jdbc.property"));
+		dataSource.setUser(env.getProperty("jdbc.user"));
+		dataSource.setPassword(env.getProperty("jdbc.password"));
 
 		// set connection pool props
 		dataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
