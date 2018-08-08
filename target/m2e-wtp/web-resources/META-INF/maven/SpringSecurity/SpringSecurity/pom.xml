@@ -49,6 +49,14 @@
 			<version>5.0.6.RELEASE</version>
 		</dependency>
 
+		<!-- Spring Security Taglib support -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.0.6.RELEASE</version>
+		</dependency>
+
+
 		<!-- JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
