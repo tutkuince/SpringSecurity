@@ -26,13 +26,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		// add our users for in memory authentication
 
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
-		UserDetails user1 = User.withUsername("ugur").password(encoder.encode("111.")).roles("EMPLOYEE").build();
-		UserDetails user2 = User.withUsername("tutku").password(encoder.encode("123.")).roles("EMPLOYEE", "MANAGER").build();
-		UserDetails user3 = User.withUsername("emin").password(encoder.encode("000.")).roles("EMPLOYEE", "ADMIN").build();
-
-		auth.inMemoryAuthentication().withUser(user1).withUser(user2).withUser(user3);
+//		UserDetails user1 = User.withUsername("ugur").password(encoder.encode("111.")).roles("EMPLOYEE").build();
+//		UserDetails user2 = User.withUsername("tutku").password(encoder.encode("123.")).roles("EMPLOYEE", "MANAGER").build();
+//		UserDetails user3 = User.withUsername("emin").password(encoder.encode("000.")).roles("EMPLOYEE", "ADMIN").build();
+//
+//		auth.inMemoryAuthentication().withUser(user1).withUser(user2).withUser(user3);
+		
+		// use jdbc authentication
+		auth.jdbcAuthentication().dataSource(dataSource);
 
 	}
 	
