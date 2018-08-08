@@ -71,13 +71,20 @@
 			<version>5.2.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-		<!-- Mysql Connector -->
+
+		<!-- Mysql Connector and C3P0 Support -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.11</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.2</version>
+		</dependency>
+
 
 	</dependencies>
 
