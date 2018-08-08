@@ -32,7 +32,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()	// restrict access based on the HttpServletRequest
-				.anyRequest().authenticated()	// Any request to the app must be authenticated (ie logged in)
+				//.anyRequest().authenticated()	// Any request to the app must be authenticated (ie logged in)
+		.antMatchers("/").hasRole("EMPLOYEE")
+		.antMatchers("/leaders/**").hasRole("MANAGER")
+		.antMatchers("/systems/**").hasRole("ADMIN")
 			.and()
 			.formLogin()	// We are customizing the form login process
 				.loginPage("/showLoginPage")	// show our custom form at the request mapping "/showLoginPage"
