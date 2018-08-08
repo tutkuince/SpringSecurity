@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
 		UserDetails user1 = User.withUsername("ugur").password(encoder.encode("111.")).roles("EMPLOYEE").build();
-		UserDetails user2 = User.withUsername("tutku").password(encoder.encode("123.")).roles("MANAGER").build();
+		UserDetails user2 = User.withUsername("tutku").password(encoder.encode("123.")).roles("MANAGER", "ADMIN").build();
 		UserDetails user3 = User.withUsername("emin").password(encoder.encode("000.")).roles("ADMIN").build();
 
 		auth.inMemoryAuthentication().withUser(user1).withUser(user2).withUser(user3);
